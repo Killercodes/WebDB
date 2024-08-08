@@ -1,0 +1,44 @@
+WebDB - A web based database
+
+Usage:
+
+	List All Tables:
+		curl "http://localhost:8080/"
+
+	Save Key-Value Pair:
+		curl -X POST -H "Content-Type: application/json" -d "{\"key\":\"name\", \"value\":\"thisdata\"}" "http://localhost:8080/web1"
+		curl -X POST "http://localhost:8080/web1?key=name&value=dave"
+		Here:
+			POST - used to set new keyvalue into db
+			web1 - table name
+			key - key value (string)
+			value - data (string)
+
+	Update Key-Value Pair:
+		curl -X PUT -H "Content-Type: application/json" -d '{"key":"name", "value":"updated value"}' "http://localhost:8080/web1"
+		curl -X PUT "http://localhost:8080/web1?key=name&value=john"
+		Here:
+			PUT - used to update value into db
+			web1 - table name
+			key - key value (string)
+			value - data (string)
+
+	Retrieve a Specific Key-Value Pair:
+		curl "http://localhost:8080/web1/name"
+		Here:
+			GET - used to get new keyvalue into db
+			web1 - table name
+			name - key value (string)
+			
+	
+	List All Key-Value Pairs:
+		curl "http://localhost:8080/web1"
+
+	Delete Key-Value Pair:
+		curl -X DELETE "http://localhost:8080/web1?key=name"
+		Here:
+			DELETE - used to delete keyvalue from db
+			web1 - table name
+			key - key value (string)
+
+	
